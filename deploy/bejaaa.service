@@ -1,0 +1,20 @@
+[Unit]
+Description=Bejaaa web application
+After=network.target
+
+[Service]
+Type=simple
+User=bejaaa
+Group=bejaaa
+WorkingDirectory=/opt/bejaaa
+EnvironmentFile=/etc/bejaaa/bejaaa.env
+ExecStart=/usr/bin/node /opt/bejaaa/node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3000
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/bejaaa
+
+[Install]
+WantedBy=multi-user.target

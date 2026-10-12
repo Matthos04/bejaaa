@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./desktop.css";
 import "./mobile.css";
+import "./animations.css";
 
 export const metadata: Metadata = {
   title: "به‌جا | راهنمای انتخاب کافه در تهران",

@@ -1,0 +1,133 @@
+/* Public pages use short, scroll-led movement inspired by the reference site. */
+:where(body:not(:has(.admin-page))) main {
+  animation: public-page-enter 560ms cubic-bezier(.2, .72, .2, 1) both;
+}
+
+:where(body:not(:has(.admin-page))) .scroll-reveal[data-reveal-ready] > * {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0) scale(.99);
+  transition:
+    opacity 650ms cubic-bezier(.2, .72, .2, 1),
+    transform 700ms cubic-bezier(.2, .72, .2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+:where(body:not(:has(.admin-page))) .scroll-reveal[data-reveal-ready] > [data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+:where(body:not(:has(.admin-page))) .step-content {
+  animation: step-content-enter 420ms cubic-bezier(.2, .72, .2, 1) both;
+}
+
+:where(body:not(:has(.admin-page))) .detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+:where(body:not(:has(.admin-page))) .detail-tags .feature-chip {
+  --chip-bg: #eef3ff;
+  --chip-ink: #173b79;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 39px;
+  padding: 7px 14px;
+  color: var(--chip-ink);
+  background: var(--chip-bg);
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: inset 0 0 0 1px rgb(0 46 135 / .035);
+  transition: transform 220ms ease, border-radius 220ms ease, box-shadow 220ms ease;
+}
+
+:where(body:not(:has(.admin-page))) .detail-tags .feature-chip:hover {
+  transform: translateY(-2px) rotate(-1deg);
+  box-shadow: 0 7px 18px rgb(0 46 135 / .09);
+}
+
+:where(body:not(:has(.admin-page))) .feature-chip--shape-0 { border-radius: 999px 999px 999px 9px; }
+:where(body:not(:has(.admin-page))) .feature-chip--shape-1 { border-radius: 9px 20px 9px 20px; }
+:where(body:not(:has(.admin-page))) .feature-chip--shape-2 { border-radius: 18px 8px 22px 8px; }
+:where(body:not(:has(.admin-page))) .feature-chip--shape-3 { border-radius: 10px 24px 10px 24px; }
+:where(body:not(:has(.admin-page))) .feature-chip--shape-4 { border-radius: 999px 12px 999px 12px; }
+
+:where(body:not(:has(.admin-page))) .feature-chip--tone-0 { --chip-bg: #edf2ff; --chip-ink: #24457b; }
+:where(body:not(:has(.admin-page))) .feature-chip--tone-1 { --chip-bg: #fff0f5; --chip-ink: #8a3155; }
+:where(body:not(:has(.admin-page))) .feature-chip--tone-2 { --chip-bg: #f8f4d8; --chip-ink: #625800; }
+:where(body:not(:has(.admin-page))) .feature-chip--tone-3 { --chip-bg: #f3eee9; --chip-ink: #594035; }
+:where(body:not(:has(.admin-page))) .feature-chip--tone-4 { --chip-bg: #eaf5ef; --chip-ink: #28583c; }
+
+:where(body:not(:has(.admin-page))) .detail-tags .feature-chip svg { color: currentColor; }
+:where(body:not(:has(.admin-page))) .how-photo { perspective: 900px; }
+:where(body:not(:has(.admin-page))) .how-photo img,
+:where(body:not(:has(.admin-page))) .detail-main-photo,
+:where(body:not(:has(.admin-page))) .cafe-card-image img {
+  transition: transform 850ms cubic-bezier(.2, .72, .2, 1), filter 500ms ease;
+}
+:where(body:not(:has(.admin-page))) .how-photo:hover img,
+:where(body:not(:has(.admin-page))) .detail-gallery:hover .detail-main-photo,
+:where(body:not(:has(.admin-page))) .cafe-card:hover .cafe-card-image img {
+  transform: scale(1.035);
+}
+
+:where(body:not(:has(.admin-page))) .hero-stack {
+  animation: hero-stack-enter 850ms 100ms cubic-bezier(.2, .72, .2, 1) both;
+}
+:where(body:not(:has(.admin-page))) .hero-cafe { transition: filter 350ms ease, box-shadow 350ms ease; }
+:where(body:not(:has(.admin-page))) .hero-stack:hover .hero-cafe--front {
+  filter: saturate(1.04);
+  box-shadow: 0 18px 50px rgb(0 26 77 / .14);
+}
+
+:where(body:not(:has(.admin-page))) .purpose-option,
+:where(body:not(:has(.admin-page))) .tag-button,
+:where(body:not(:has(.admin-page))) .photo-thumbnails button,
+:where(body:not(:has(.admin-page))) .star-picker button {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease;
+}
+:where(body:not(:has(.admin-page))) .purpose-option:hover,
+:where(body:not(:has(.admin-page))) .tag-button:hover,
+:where(body:not(:has(.admin-page))) .photo-thumbnails button:hover,
+:where(body:not(:has(.admin-page))) .star-picker button:hover {
+  transform: translateY(-2px);
+}
+
+:where(body:not(:has(.admin-page))) .scroll-reveal.detail-sections {
+  display: contents;
+}
+:where(body:not(:has(.admin-page))) .scroll-reveal.final-cta-content {
+  display: contents;
+}
+
+@keyframes public-page-enter {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes step-content-enter {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-stack-enter {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(body:not(:has(.admin-page))) main,
+  :where(body:not(:has(.admin-page))) .step-content,
+  :where(body:not(:has(.admin-page))) .hero-stack {
+    animation: none;
+  }
+  :where(body:not(:has(.admin-page))) .scroll-reveal[data-reveal-ready] > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}

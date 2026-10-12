@@ -2,7 +2,17 @@
 
 import { useEffect, useRef, type ReactNode } from 'react';
 
-export function ScrollReveal({ children }: { children: ReactNode }) {
+export function ScrollReveal({
+  children,
+  className = '',
+  stagger = 95,
+  'aria-label': ariaLabel,
+}: {
+  children: ReactNode;
+  className?: string;
+  stagger?: number;
+  'aria-label'?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,9 +30,9 @@ export function ScrollReveal({ children }: { children: ReactNode }) {
     observer = new IntersectionObserver(entries => {
       entries.filter(entry => entry.isIntersecting)
         .sort((a, b) => cards.indexOf(a.target as HTMLElement) - cards.indexOf(b.target as HTMLElement))
-        .forEach((entry, index) => {
+        .forEach(entry => {
           const card = entry.target as HTMLElement;
-          card.style.setProperty('--reveal-delay', `${index * 140}ms`);
+          card.style.setProperty('--reveal-delay', `${cards.indexOf(card) * stagger}ms`);
           card.setAttribute('data-revealed', 'true');
           observer?.unobserve(card);
         });
@@ -39,7 +49,7 @@ export function ScrollReveal({ children }: { children: ReactNode }) {
         card.style.removeProperty('--reveal-delay');
       });
     };
-  }, []);
+  }, [stagger]);
 
-  return <div ref={ref} className="moment-grid scroll-reveal">{children}</div>;
+  return <div ref={ref} className={`scroll-reveal ${className}`.trim()} role={ariaLabel ? 'group' : undefined} aria-label={ariaLabel}>{children}</div>;
 }

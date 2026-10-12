@@ -30,7 +30,6 @@
     "types": [
       "node",
       "@cloudflare/workers-types",
-      "vinext/types",
       "vite/client"
     ],
     "allowImportingTsExtensions": true
