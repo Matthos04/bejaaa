@@ -1,0 +1,7 @@
+import { Cafe } from './model';
+// Fictional examples, never inserted into the production database.
+export const demoCafes:Cafe[]=[
+{id:'demo-1',name:'کافهٔ حیاط آبی',neighborhood:'کریم‌خان',address:'موقعیت نمایشی در محدودهٔ کریم‌خان',description:'یک حیاط روشن و میزهای کوچک برای قرارهای طولانی. این کافه و مشخصات آن صرفاً نمونهٔ طراحی هستند.',lat:35.716,lng:51.414,price:2,maxGroup:6,purposes:{work:'yes',date:'yes',meeting:'yes',friends:'yes'},features:{quiet:'yes',wifi:'yes',power:'yes',outdoor:'yes'},images:['/api/editorial/hero'],phone:'',instagram:'',hours:'اطلاعات نمونه',active:true,status:'published',demo:true},
+{id:'demo-2',name:'کافهٔ گوشه',neighborhood:'ولیعصر',address:'موقعیت نمایشی در محدودهٔ ولیعصر',description:'نور عصر، عطر قهوه و فرصتی برای مکث. این کافه و مشخصات آن صرفاً نمونهٔ طراحی هستند.',lat:35.728,lng:51.409,price:1,maxGroup:4,purposes:{work:'yes',date:'yes',meeting:'yes',friends:'yes'},features:{quiet:'yes',wifi:'yes',power:'yes'},images:['/api/editorial/interior'],phone:'',instagram:'',hours:'اطلاعات نمونه',active:true,status:'published',demo:true},
+{id:'demo-3',name:'کافهٔ نیمروز',neighborhood:'انقلاب',address:'موقعیت نمایشی در محدودهٔ انقلاب',description:'یک فنجان قهوه و یک شروع تازه. این کافه و مشخصات آن صرفاً نمونهٔ طراحی هستند.',lat:35.700,lng:51.397,price:2,maxGroup:8,purposes:{work:'yes',date:'yes',meeting:'yes',friends:'yes'},features:{wifi:'yes',outdoor:'yes'},images:['/api/editorial/coffee'],phone:'',instagram:'',hours:'اطلاعات نمونه',active:true,status:'published',demo:true}
+];

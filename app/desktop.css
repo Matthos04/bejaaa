@@ -1,0 +1,62 @@
+/* Public desktop composition. Mobile rules never enter this range. */
+@media(min-width:1500px){:where(body:not(:has(.admin-page))) .hero{padding-block:95px}:where(body:not(:has(.admin-page))) .hero-photo{height:540px}}
+@media(min-width:768px) and (max-width:1100px){:where(body:not(:has(.admin-page))) .container{width:calc(100% - 56px)}:where(body:not(:has(.admin-page))) .hero{gap:40px}:where(body:not(:has(.admin-page))) .hero h1{font-size:64px}:where(body:not(:has(.admin-page))) .hero-photo{height:440px}:where(body:not(:has(.admin-page))) .how-grid{gap:55px}:where(body:not(:has(.admin-page))) .section h2,:where(body:not(:has(.admin-page))) .how-section h2{font-size:34px}:where(body:not(:has(.admin-page))) .moment-grid{gap:18px}:where(body:not(:has(.admin-page))) .moment h3{font-size:19px}:where(body:not(:has(.admin-page))) .wizard-layout{grid-template-columns:270px minmax(0,1fr);gap:40px;width:calc(100% - 56px)}:where(body:not(:has(.admin-page))) .wizard-side{padding:25px}:where(body:not(:has(.admin-page))) .results-grid{grid-template-columns:1.2fr 1fr;gap:20px}:where(body:not(:has(.admin-page))) .cafe-card{grid-template-columns:155px 1fr}:where(body:not(:has(.admin-page))) .cafe-card-body{padding:17px 14px}:where(body:not(:has(.admin-page))) .card-bottom{flex-wrap:wrap}:where(body:not(:has(.admin-page))) .detail-columns{gap:35px;grid-template-columns:1fr 310px}:where(body:not(:has(.admin-page))) .admin-form{grid-template-columns:1fr 255px;gap:22px}}
+
+@media(min-width:768px){
+ :where(body:not(:has(.admin-page))) .nav{height:80px}
+ :where(body:not(:has(.admin-page))) .container{width:min(1240px,calc(100% - 64px))}
+ :where(body:not(:has(.admin-page))) .button{white-space:nowrap}
+ .landing-page .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;padding:64px 0 72px;align-items:center}
+ .landing-page .hero-copy{display:block}
+ .landing-page .hero h1{font-size:clamp(48px,5.2vw,72px);line-height:1.3;margin:18px 0 24px}
+ .landing-page .hero-description{font-size:19px}
+ .landing-page .hero-action{position:static}
+ .landing-page .hero-visual{padding:0;min-width:0}
+ .hero-stack{height:470px;width:100%;max-width:550px;margin-inline:auto}
+ .hero-color-block{inset:48px 0 0 16px;border-radius:16px}
+ .hero-cafe{width:72%;top:22px;left:50%;max-width:390px;border-radius:14px}
+ .hero-cafe--back{transform:translate(calc(-50% + 48px),0) rotate(10deg)}
+ .hero-cafe--middle{transform:translate(calc(-50% - 48px),0) rotate(-10deg)}
+ .hero-cafe--front{transform:translate(-50%,20px) rotate(0deg)}
+ .hero-cafe>img{height:245px}
+ .hero-cafe-info{padding:18px 22px}
+ .hero-cafe-info h2{font-size:27px}
+ .hero-cafe-meta,.hero-cafe-purpose{font-size:14px}
+ .hero-cafe-purpose{padding-top:12px;margin-top:12px}
+ :where(body:not(:has(.admin-page))) .wizard-layout{display:grid;grid-template-columns:280px minmax(0,680px);justify-content:center;gap:64px;width:min(1120px,calc(100% - 64px));margin:48px auto 64px;min-height:600px;padding:0}
+ :where(body:not(:has(.admin-page))) .wizard-side{display:block;position:sticky;top:24px}
+ :where(body:not(:has(.admin-page))) .wizard-main{min-width:0;padding-top:12px}
+ :where(body:not(:has(.admin-page))) .wizard-actions{position:static;margin-top:28px;padding:24px 0 0;box-shadow:none}
+ :where(body:not(:has(.admin-page))) .purpose-option{min-height:175px;padding:24px}
+ :where(body:not(:has(.admin-page))) .purpose-option.selected{padding:23px}
+ :where(body:not(:has(.admin-page))) .purpose-art{margin-bottom:18px;color:var(--blue)}
+ :where(body:not(:has(.admin-page))) .wizard-main .map-shell{height:340px}
+ :where(body:not(:has(.admin-page))) .results-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,1fr);gap:32px}
+ :where(body:not(:has(.admin-page))) .cafe-list{display:block;min-width:0}
+ :where(body:not(:has(.admin-page))) .cafe-card{display:grid;grid-template-columns:40% minmax(0,1fr);border:1px solid var(--line);border-radius:12px;padding:0;background:white}
+ :where(body:not(:has(.admin-page))) .cafe-card-image{display:block;min-height:240px;height:auto}
+ :where(body:not(:has(.admin-page))) .cafe-card-body{margin:0;padding:20px;box-shadow:none;border-radius:0}
+ :where(body:not(:has(.admin-page))) .cafe-card-body h2{font-size:25px}
+ :where(body:not(:has(.admin-page))) .card-bottom{flex-wrap:wrap}
+ :where(body:not(:has(.admin-page))) .results-map{display:block;position:sticky;top:24px;height:calc(100dvh - 48px);padding-top:40px}
+ :where(body:not(:has(.admin-page))) .results-map .map-shell{height:calc(100% - 48px);min-height:360px}
+ :where(body:not(:has(.admin-page))) .mobile-view-switch{display:none}
+ :where(body:not(:has(.admin-page))) .detail-page{display:block}
+ :where(body:not(:has(.admin-page))) .detail-title{display:flex;flex-direction:row;align-items:center}
+ :where(body:not(:has(.admin-page))) .detail-gallery{margin:0}
+ :where(body:not(:has(.admin-page))) .detail-main-photo{height:440px;border-radius:16px}
+ :where(body:not(:has(.admin-page))) .detail-columns{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;margin-top:40px}
+ :where(body:not(:has(.admin-page))) .visit-card{position:sticky;top:24px;grid-row:auto;order:0;background:white;border:1px solid var(--line)}
+ :where(body:not(:has(.admin-page))) .directions-action{position:static;box-shadow:none;width:100%}
+}
+@media(min-width:768px) and (max-width:1023px){
+ .landing-page .hero{gap:28px;padding-block:44px}
+ .hero-stack{height:360px}.hero-cafe>img{height:175px}.hero-cafe-info{padding:14px}.hero-cafe-info h2{font-size:22px}
+ .hero-cafe--back{transform:translate(calc(-50% + 24px),0) rotate(8deg)}.hero-cafe--middle{transform:translate(calc(-50% - 24px),0) rotate(-8deg)}
+ :where(body:not(:has(.admin-page))) .nav nav{gap:20px;font-size:14px}
+ :where(body:not(:has(.admin-page))) .wizard-layout{grid-template-columns:220px minmax(0,1fr);gap:28px}
+ :where(body:not(:has(.admin-page))) .wizard-side{padding:24px}
+ :where(body:not(:has(.admin-page))) .results-grid{grid-template-columns:minmax(0,1fr) minmax(270px,.8fr);gap:20px}
+ :where(body:not(:has(.admin-page))) .cafe-card{grid-template-columns:1fr}.cafe-card-image{max-height:230px}
+ :where(body:not(:has(.admin-page))) .detail-columns{grid-template-columns:minmax(0,1fr) 280px;gap:28px}
+}
